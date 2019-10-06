@@ -27,8 +27,8 @@ vector<SDL_Point> AppConfig::enemy_starting_point =
 vector<Player::PlayerKeys> AppConfig::player_keys =
 []{
     vector<Player::PlayerKeys> v;
-    v.push_back({SDL_SCANCODE_UP, SDL_SCANCODE_DOWN, SDL_SCANCODE_LEFT, SDL_SCANCODE_RIGHT, SDL_SCANCODE_RCTRL});
     v.push_back({SDL_SCANCODE_W, SDL_SCANCODE_S, SDL_SCANCODE_A, SDL_SCANCODE_D, SDL_SCANCODE_LCTRL});
+    v.push_back({SDL_SCANCODE_UP, SDL_SCANCODE_DOWN, SDL_SCANCODE_LEFT, SDL_SCANCODE_RIGHT, SDL_SCANCODE_RCTRL});
     return v;
 }();
 unsigned AppConfig::level_start_time = 2000;
@@ -36,7 +36,7 @@ unsigned AppConfig::slip_time = 380;
 unsigned AppConfig::enemy_start_count = 20;
 unsigned AppConfig::enemy_redy_time = 500;
 unsigned AppConfig::player_bullet_max_size = 2;
-unsigned AppConfig::score_show_time = 3000;
+unsigned AppConfig::score_show_time = 1000;
 unsigned AppConfig::bonus_show_time = 10000;
 unsigned AppConfig::tank_shield_time = 10000;
 unsigned AppConfig::tank_frozen_time = 8000;
