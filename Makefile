@@ -8,7 +8,7 @@ ifeq ($(OS),Windows_NT)
 	CC = $(MINGW_HOME)/bin/mingw32-g++.exe
 	INCLUDEPATH = -I$(RESOURCES_DIR)/SDL/i686-w64-mingw32/include
 	LFLAGS = -mwindows -O
-	CFLAGS = -c -Wall
+	CFLAGS = -c -g -Wall
 	LIBS = -L$(RESOURCES_DIR)/SDL/i686-w64-mingw32/lib -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf
 	APP_RESOURCES = SDL/i686-w64-mingw32/bin/*.dll dll/*.dll font/prstartk.ttf png/texture.png levels
 	RESOURCES = $(APP_RESOURCES) mingw_resources
@@ -16,7 +16,7 @@ else
 	CC = g++
 	INCLUDEPATH =
 	LFLAGS = -O
-	CFLAGS = -c -Wall -std=c++11
+	CFLAGS = -c -g -Wall -std=c++11
 	LIBS = -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf
 	APP_RESOURCES = font/prstartk.ttf png/texture.png levels
 	RESOURCES = $(APP_RESOURCES)
