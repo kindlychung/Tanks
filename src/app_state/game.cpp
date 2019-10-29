@@ -963,11 +963,13 @@ void Game::generateEnemy() {
 
 void Game::generateBonus() {
     int rand_num =
-        rand() % (ST_BONUS_BOAT - ST_BONUS_GRENADE + 1 + 5) + ST_BONUS_GRENADE;
+        rand() % (ST_BONUS_BOAT - ST_BONUS_GRENADE + 1 + 12) + ST_BONUS_GRENADE;
+    int diff = rand_num - ST_BONUS_BOAT;
     int bonus_num =
-        ((rand_num - ST_BONUS_BOAT) > 2)
-            ? ST_BONUS_GUN
-            : (rand_num - ST_BONUS_BOAT) >= 0 ? ST_BONUS_TANK : rand_num;
+        (diff > 6)
+            ? ST_BONUS_TANK
+            : diff > 3 ? ST_BONUS_HELMET
+            : diff >= 0 ? ST_BONUS_GUN : rand_num;
     Bonus* b = new Bonus(0, 0, static_cast<SpriteType>(bonus_num));
     SDL_Rect intersect_rect;
     do {
