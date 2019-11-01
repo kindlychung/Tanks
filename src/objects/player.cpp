@@ -147,8 +147,9 @@ void Player::changeStarCountBy(int c)
     else if(star_count < 0) star_count = 0;
 
     if(star_count >= 2 && c > 0) m_bullet_max_size++;
-    else m_bullet_max_size = 2;
+    else m_bullet_max_size = 3;
 
-    if(star_count > 0) default_speed = AppConfig::tank_default_speed * 1.3;
-    else default_speed = AppConfig::tank_default_speed;
+    // if(star_count > 0) default_speed = AppConfig::tank_default_speed * 1.5;
+    // else default_speed = AppConfig::tank_default_speed;
+    default_speed = AppConfig::tank_default_speed * 1.3;
 }
