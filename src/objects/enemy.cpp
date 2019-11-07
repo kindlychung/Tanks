@@ -23,7 +23,7 @@ Enemy::Enemy()
     m_frozen_time = 0;
 
     if(type == ST_TANK_B)
-        default_speed = AppConfig::tank_default_speed * 1.3;
+        default_speed = AppConfig::tank_default_speed * 1.2;
     else
         default_speed = AppConfig::tank_default_speed;
 
@@ -51,7 +51,7 @@ Enemy::Enemy(double x, double y, SpriteType type)
     m_frozen_time = 0;
 
     if(type == ST_TANK_B)
-        default_speed = AppConfig::tank_default_speed * 1.3;
+        default_speed = AppConfig::tank_default_speed * 1.2;
     else
         default_speed = AppConfig::tank_default_speed;
 
@@ -155,12 +155,12 @@ void Enemy::update(Uint32 dt)
         }
         else if(type == ST_TANK_C)
         {
-            m_reload_time = rand() % 800;
+            m_reload_time = (rand() % 800) + 200;
             fire();
         }
         else
         {
-            m_reload_time = rand() % 1000;
+            m_reload_time = (rand() % 1000) + 200;
             fire();
         }
     }
